@@ -8,7 +8,7 @@ module.exports = async function(deployer) {
   const token = await Token.deployed()
 
   //depoly PenguinSwap
-  await deployer.deploy(PenguinSwap);
+  await deployer.deploy(PenguinSwap, token.address);
   const penguinSwap = await PenguinSwap.deployed()
 
   //Transfers all tokens to PenguinSwap (1 mil)
